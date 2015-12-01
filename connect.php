@@ -8,12 +8,12 @@ if($link === false){
 }
  
 // Attempt insert query execution
-// $sql = "INSERT INTO player VALUES ('1002', 'Jane', 10, 100, 23)";
-// if(mysqli_query($link, $sql)){
-//     echo "Records added successfully.";
-// } else{
-//     echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
-// }
+$sql = "INSERT INTO player VALUES ('1003', 'Jack', 29, 130, 23)";
+if(mysqli_query($link, $sql)){
+    echo "Records added successfully.";
+} else{
+    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+}
  
  $query = "select * from player";
  $result = mysqli_query($link, $query);
@@ -23,7 +23,9 @@ if($link === false){
     {
         $emptyarray[] = $row;
     }
-    echo json_encode($emptyarray);
+    $fp = fopen('data.json', 'w');
+    fwrite($fp, json_encode($emptyarray));
+    fclose($fp);
 // Close connection
 mysqli_close($link);
 ?>
