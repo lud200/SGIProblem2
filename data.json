@@ -1,1 +1,37 @@
-[{"PlayerID":"1001","Name":"John","Credits":"10","LifetimeSpins":"100","SaltValue":"23"},{"PlayerID":"1002","Name":"Jane","Credits":"10","LifetimeSpins":"100","SaltValue":"23"},{"PlayerID":"1003","Name":"Jack","Credits":"29","LifetimeSpins":"130","SaltValue":"23"},{"PlayerID":"1004","Name":"Jay","Credits":"54","LifetimeSpins":"130","SaltValue":"23"}]
+[
+    {
+        "PlayerID": "1001",
+        "Name": "John",
+        "Credits": "10",
+        "LifetimeSpins": "100",
+        "SaltValue": "23"
+    },
+    {
+        "PlayerID": "1002",
+        "Name": "Jane",
+        "Credits": "10",
+        "LifetimeSpins": "100",
+        "SaltValue": "23"
+    },
+    {
+        "PlayerID": "1003",
+        "Name": "Jack",
+        "Credits": "29",
+        "LifetimeSpins": "130",
+        "SaltValue": "23"
+    },
+    {
+        "PlayerID": "1004",
+        "Name": "Jay",
+        "Credits": "54",
+        "LifetimeSpins": "130",
+        "SaltValue": "23"
+    },
+    {
+        "PlayerID": "1005",
+        "Name": "Jay",
+        "Credits": "54",
+        "LifetimeSpins": "130",
+        "SaltValue": "23"
+    }
+]

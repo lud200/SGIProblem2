@@ -8,7 +8,7 @@ if($link === false){
 }
  
 // Attempt insert query execution
-$sql = "INSERT INTO player VALUES ('1004', 'Jay', 54, 130, 23)";
+$sql = "INSERT INTO player VALUES ('1005', 'Jay', 54, 130, 23)";
 if(mysqli_query($link, $sql)){
     echo "Records added successfully.";
 } else{
@@ -24,7 +24,7 @@ if(mysqli_query($link, $sql)){
         $emptyarray[] = $row;
     }
     $fp = fopen('data.json', 'w');
-    fwrite($fp, json_encode($emptyarray));
+    fwrite($fp, json_encode($emptyarray, JSON_PRETTY_PRINT));
     fclose($fp);
 // Close connection
 mysqli_close($link);
