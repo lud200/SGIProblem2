@@ -5,9 +5,9 @@ Credits
 Lifetime Spins
 Salt Value
 */
-create table player(PlayerID varchar(20) NOT NULL, 
-                    Name varchar(60), 
-                    Credits int, 
-                    LifetimeSpins int, 
-                    SaltValue int,
-                    primary key(PlayerID));
+CREATE TABLE player(PlayerID VARCHAR(20) NOT NULL, 
+                    Name VARCHAR(60), 
+                    Credits INT, 
+                    LifetimeSpins INT, 
+                    SaltValue INT,
+                    PRIMARY KEY(PlayerID));
