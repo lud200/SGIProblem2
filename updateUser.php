@@ -3,6 +3,8 @@
 PlayerID:<input type="text" name="playerid" id = "playerid"><br><br>
 CreditsWon:<input type="text" name="CreditsWon" id = "CreditsWon"><br><br>
 CreditsLost:<input type="text" name="CreditsLost" id = "CreditsLost"><br><br>
+<input type="radio" name="spin" id="spin" value=1>Spin<br>
+<input type="radio" name="spin" id="spin" value=0>noSpin<br>
 <input type="submit" name="submit" value="Submit">
 </form>
 
@@ -26,10 +28,13 @@ if($_POST){
 	if(isset($_POST['CreditsLost'])){
 		$creditslost = $_POST['CreditsLost'];
 	}
+	if(isset($_POST['spin'])){
+		$radio = $_POST['spin'];
+	}
 	$players = "SELECT PlayerID FROM  player where playerID = '$playerID'";
 	$findPlayers = mysqli_query($link,$players);	
 	if($findPlayers->num_rows>0){
-		$sql = "UPDATE player SET Credits = Credits+'$creditswon'-'$creditslost', LifetimeSpins = LifetimeSpins+1 WHERE playerID = '$playerID'";
+		$sql = "UPDATE player SET Credits = Credits+'$creditswon'-'$creditslost'-'$radio', LifetimeSpins = LifetimeSpins+1 WHERE playerID = '$playerID'";
 		mysqli_query($link, $sql);
 	}
 	else{
