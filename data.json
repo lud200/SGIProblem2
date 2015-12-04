@@ -2,9 +2,9 @@
     {
         "PlayerID": "1001",
         "Name": "John",
-        "Credits": "10",
-        "LifetimeSpins": "100",
-        "life_time_avg_return": "0.1000"
+        "Credits": "9",
+        "LifetimeSpins": "101",
+        "life_time_avg_return": "0.0891"
     },
     {
         "PlayerID": "1002",
@@ -58,15 +58,15 @@
     {
         "PlayerID": "1099",
         "Name": "dumfy",
-        "Credits": "1100",
-        "LifetimeSpins": "22",
-        "life_time_avg_return": "50.0000"
+        "Credits": "1124",
+        "LifetimeSpins": "24",
+        "life_time_avg_return": "46.8333"
     },
     {
         "PlayerID": "1122",
         "Name": "Paul",
-        "Credits": "3000",
-        "LifetimeSpins": "39",
-        "life_time_avg_return": "76.9231"
+        "Credits": "3012",
+        "LifetimeSpins": "40",
+        "life_time_avg_return": "75.3000"
     }
 ]
