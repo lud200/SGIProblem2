@@ -48,14 +48,11 @@ if($_POST){
    	 		echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
 		}
 	}
-}
-
-
-$query = "SELECT PlayerID, Name, Credits, LifetimeSpins, (Credits/LifetimeSpins) as life_time_avg_return
-  FROM player";
- $result = mysqli_query($link, $query);
- $emptyarray = array();
- while($row =mysqli_fetch_assoc($result))
+	$query = "SELECT PlayerID, Name, Credits, LifetimeSpins, (Credits/LifetimeSpins) as life_time_avg_return
+ 				FROM player WHERE PlayerID = '$playerID'";
+ 	$result = mysqli_query($link, $query);
+ 	$emptyarray = array();
+ 	while($row =mysqli_fetch_assoc($result))
     {
         $emptyarray[] = $row;
     }
@@ -63,8 +60,8 @@ $query = "SELECT PlayerID, Name, Credits, LifetimeSpins, (Credits/LifetimeSpins)
     $fp = fopen('data.json', 'w');
     fwrite($fp, json_encode($emptyarray, JSON_PRETTY_PRINT));
     fclose($fp);
-// Close connection
-mysqli_close($link);
+	// Close connection
+	mysqli_close($link);
+}
 ?>
-
 </html>
