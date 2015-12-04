@@ -19,20 +19,36 @@ if($link === false){
  
 
 if($_POST){
+	$isValid = true;
 	if(isset($_POST['playerid'])){
 		$playerID = $_POST['playerid'];
+		if(empty($playerID)){
+			$isValid = false;
+		}
 	}
 	if(isset($_POST['playerName'])){
 		$name = $_POST['playerName'];
+		if(empty($name)){
+			$name = "";
+		}
 	}
 	if(isset($_POST['Credits'])){
 		$credits = $_POST['Credits'];
+		if(empty($credits)){
+			$isValid = false;
+		}
 	}
 	if(isset($_POST['LifetimeSpins'])){
 		$lifetimespins = $_POST['LifetimeSpins'];
+		if(empty($lifetimespins)){
+			$lifetimespins = 0;
+		}
 	}
 	if(isset($_POST['SaltValue'])){
 		$saltValue = $_POST['SaltValue'];
+		if(empty($saltValue)){
+			$saltValue=0;
+		}
 	}	
 	$players = "SELECT PlayerID FROM  player where playerID = '$playerID'";
 	$findPlayers = mysqli_query($link,$players);
@@ -40,12 +56,17 @@ if($_POST){
 		echo "Row already exists in the database";
 	}
 	else{
-		$sql = "INSERT INTO player(PlayerID, Name, Credits, LifetimeSpins,SaltValue) 
+		if($isValid){
+			$sql = "INSERT INTO player(PlayerID, Name, Credits, LifetimeSpins,SaltValue) 
 				VALUES ('$playerID', '$name', $credits, $lifetimespins, $saltValue)";
-		if(mysqli_query($link, $sql)){
-   	 		echo "Records added successfully.";
-		} else{
-   	 		echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+			if(mysqli_query($link, $sql)){
+   	 			echo "Records added successfully.";
+			} else{
+   	 			echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+			}
+		}
+		else{
+			echo "Player cannot be added";
 		}
 	}
 	$query = "SELECT PlayerID, Name, Credits, LifetimeSpins, (Credits/LifetimeSpins) as life_time_avg_return
