@@ -4,34 +4,55 @@
         "Name": "John",
         "Credits": "10",
         "LifetimeSpins": "100",
-        "SaltValue": "23"
+        "life_time_avg_return": "0.1000"
     },
     {
         "PlayerID": "1002",
         "Name": "Jane",
         "Credits": "10",
         "LifetimeSpins": "100",
-        "SaltValue": "23"
+        "life_time_avg_return": "0.1000"
     },
     {
         "PlayerID": "1003",
         "Name": "Jack",
         "Credits": "29",
         "LifetimeSpins": "130",
-        "SaltValue": "23"
+        "life_time_avg_return": "0.2231"
     },
     {
         "PlayerID": "1004",
         "Name": "Jay",
         "Credits": "54",
         "LifetimeSpins": "130",
-        "SaltValue": "23"
+        "life_time_avg_return": "0.4154"
     },
     {
         "PlayerID": "1005",
         "Name": "Jay",
         "Credits": "54",
         "LifetimeSpins": "130",
-        "SaltValue": "23"
+        "life_time_avg_return": "0.4154"
+    },
+    {
+        "PlayerID": "1006",
+        "Name": "Santhosh",
+        "Credits": "54",
+        "LifetimeSpins": "130",
+        "life_time_avg_return": "0.4154"
+    },
+    {
+        "PlayerID": "1007",
+        "Name": "Jay",
+        "Credits": "54",
+        "LifetimeSpins": "1300",
+        "life_time_avg_return": "0.0415"
+    },
+    {
+        "PlayerID": "101",
+        "Name": "Jake",
+        "Credits": "1009",
+        "LifetimeSpins": "11",
+        "life_time_avg_return": "91.7273"
     }
 ]
