@@ -1,8 +1,11 @@
 <html>
 <form action="updateUser.php" method="post">
 PlayerID:<input type="text" name="playerid" id = "playerid"><br><br>
-CreditsWon:<input type="text" name="CreditsWon" id = "CreditsWon"><br><br>
-CreditsLost:<input type="text" name="CreditsLost" id = "CreditsLost"><br><br>
+betAmount:<input type="text" name="betAmount" id = "betAmount"><br><br>
+
+<input type="radio" name="Credits" id="Credits" value=1>CreditsWon<br>
+<input type="radio" name="Credits" id="Credits" value=-1>CreditsLost<br><br>
+
 <input type="radio" name="spin" id="spin" value=1>Spin<br>
 <input type="radio" name="spin" id="spin" value=0>noSpin<br>
 <input type="submit" name="submit" value="Submit">
@@ -22,11 +25,11 @@ if($_POST){
 	if(isset($_POST['playerid'])){
 		$playerID = $_POST['playerid'];
 	}
-	if(isset($_POST['CreditsWon'])){
-		$creditswon = $_POST['CreditsWon'];
+	if(isset($_POST['betAmount'])){
+		$betamount = $_POST['betAmount'];
 	}
-	if(isset($_POST['CreditsLost'])){
-		$creditslost = $_POST['CreditsLost'];
+	if(isset($_POST['Credits'])){
+		$credits = $_POST['Credits'];
 	}
 	if(isset($_POST['spin'])){
 		$radio = $_POST['spin'];
@@ -34,8 +37,9 @@ if($_POST){
 	$players = "SELECT PlayerID FROM  player where playerID = '$playerID'";
 	$findPlayers = mysqli_query($link,$players);	
 	if($findPlayers->num_rows>0){
-		$sql = "UPDATE player SET Credits = Credits+'$creditswon'-'$creditslost'-'$radio', LifetimeSpins = LifetimeSpins+1 WHERE playerID = '$playerID'";
+		$sql = "UPDATE player SET Credits = Credits+('$betamount'*'$credits')-'$radio', LifetimeSpins = LifetimeSpins+1 WHERE playerID = '$playerID'";
 		mysqli_query($link, $sql);
+		echo "Row Updated";
 	}
 	else{
 		echo "Row does not exist in the database";
