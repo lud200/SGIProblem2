@@ -54,5 +54,19 @@
         "Credits": "1009",
         "LifetimeSpins": "11",
         "life_time_avg_return": "91.7273"
+    },
+    {
+        "PlayerID": "1099",
+        "Name": "dumfy",
+        "Credits": "1100",
+        "LifetimeSpins": "22",
+        "life_time_avg_return": "50.0000"
+    },
+    {
+        "PlayerID": "1122",
+        "Name": "Paul",
+        "Credits": "3000",
+        "LifetimeSpins": "39",
+        "life_time_avg_return": "76.9231"
     }
 ]
